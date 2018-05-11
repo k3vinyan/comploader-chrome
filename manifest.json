@@ -1,0 +1,25 @@
+{
+
+  "manifest_version": 2,
+  "name": "comploader-chrome",
+  "version": "1.0",
+
+  "description": "send tbas data to server",
+
+  "icons": {
+    "16": "icon16.png",
+    "128": "icon128.png"
+
+  },
+
+  "content_scripts": [
+    {
+     "matches": ["https://www.amazonlogistics.com/comp/packageSearch*"],
+      "js": ["jquery-3.2.1.min.js", "comploader.js"]
+    }
+  ],
+  "background":
+  {
+    "scripts": ["jquery-3.2.1.min.js"]
+  }
+  }
