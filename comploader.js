@@ -20,21 +20,14 @@ $( document ).ready(function(){
     var even = $(".even");
     var odd = $(".odd");
     for(var i = 0; i < even.length; i++){
-      console.log("-------------------------------------------")
-      console.log(even[i].children[15].innerText)
-      console.log(even[i].children[16].innerText)
-      console.log(even[i].children[17].innerText)
-      console.log("-------------------------------------------")
-
-
       routeArray.push({
         tba: even[i].children[2].innerText,
         city: even[i].children[10].innerText,
         address: even[i].children[12].innerText,
         zipCode: even[i].children[13].innerText,
-        route: even[i].children[16].innerText,
+        route: even[i].children[16].innerText.replace(/\xa0/g, ''),
         status: even[i].children[18].innerText,
-        associate: even[i].children[19].innerText,
+        associate: even[i].children[19].innerText.replace(/\xa0/g, ''),
         sortZone: even[i].children[26].innerText,
         link: even[i].children[2].children[0].href
       })
@@ -46,9 +39,9 @@ $( document ).ready(function(){
         city: odd[i].children[10].innerText,
         address: odd[i].children[12].innerText,
         zipCode: odd[i].children[13].innerText,
-        route: odd[i].children[16].innerText,
+        route: odd[i].children[16].innerText.replace(/\xa0/g, ''),
         status: odd[i].children[18].innerText,
-        associate: odd[i].children[19].innerText,
+        associate: odd[i].children[19].innerText.replace(/\xa0/g, ''),
         sortZone: odd[i].children[26].innerText,
         link: odd[i].children[2].children[0].href
       })
@@ -56,7 +49,7 @@ $( document ).ready(function(){
 
     $.ajax({
       type: "POST",
-      url: "http://localhost:9999/api/tbas",
+      url: "http://localhost:9000/api/tbas",
       data: JSON.stringify(routeArray),
       success: function(data){
         console.log(data)
