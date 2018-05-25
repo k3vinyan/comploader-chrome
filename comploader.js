@@ -61,23 +61,20 @@ $( document ).ready(function(){
 
   }
 
+  //create button with additonal options
+  function optionButton(id, value, color, bgColor, padding){
+    var id = id;
+    var value = value;
+    var color = color;
+    var bgColor = bgColor;
+    var padding = padding;
+    var string;
 
+    string = "<input id='" + id + "' type='button' value='" + value +
+    "' style='" +"color: " + color + "; " + "background-color:" + bgColor +
+    "; " + "padding: " + padding + "; border-style: solid;'></button>";
 
-
-          //create button with additonal options
-          function optionButton(id, value, color, bgColor, padding){
-            var id = id;
-            var value = value;
-            var color = color;
-            var bgColor = bgColor;
-            var padding = padding;
-            var string;
-
-            string = "<input id='" + id + "' type='button' value='" + value +
-            "' style='" +"color: " + color + "; " + "background-color:" + bgColor +
-            "; " + "padding: " + padding + "; border-style: solid;'></button>";
-
-            return string;
-          };
+    return string;
+  };
 
 });
